@@ -11,10 +11,10 @@ This is the main class of the application. It orchestrates the entire process by
 This service class is responsible for converting gold prices to a desired currency. It receives a list of gold prices, fetches the exchange rate from a `CurrencyExchangeService`, and then performs the conversion. Additionally, it calculates statistics such as the maximum, minimum, and average gold prices.
 
 ### 3. `CurrencyExchangeService.java`
-This service class retrieves the exchange rate for the currency used in converting gold prices. It fetches the exchange rate from an external API, specifically from the National Bank of Poland (NBP) API. The exchange rate fetched is for the Euro (EUR) currency.
+This service class retrieves the exchange rate for the currency used in converting gold prices. It fetches the exchange rate from an external API, specifically from the National Bank of Poland (NBP) API (`http://api.nbp.pl/api/exchangerates/rates/c/eur/`).
 
 ### 4. `GoldApiService.java`
-This service class fetches gold prices data from an external API, specifically from the National Bank of Poland (NBP) API. It allows fetching gold prices for a specific date range by providing the start and end dates as parameters.
+This service class fetches gold prices data from an external API, specifically from the National Bank of Poland (NBP) API (`http://api.nbp.pl/api/cenyzlota`). It allows fetching gold prices for a specific date range by providing the start and end dates as parameters.
 
 ### 5. `GoldPlotService.java`
 This service class generates a time-series chart of gold prices over time using the JFreeChart library. It receives a list of gold prices and plots them on a chart, which is then saved as an image file (`gold_prices_chart.jpg`).
