@@ -1,26 +1,26 @@
 # Gold Price Analysis Application
 
-This Java application utilizes Java 17 and Gradle 8.5 to fetch gold prices data from an API, convert the prices to a desired currency, perform statistical analysis on the prices, and plot them on a time-series chart. Here's a detailed explanation of each file and its functionality:
+This Java application utilizes Java 17 and Gradle 8.5 to fetch gold prices data from an API, convert the prices to a desired currency, perform statistical analysis on the prices, and plot them on a time-series chart. Below is an explicit explanation of each file and its functionality:
 
 ## Files
 
 ### 1. `SWP1.java`
-This is the main class of the application. It initializes the required services, fetches gold prices, converts them, and plots the data.
+This is the main class of the application. It orchestrates the entire process by initializing the required services, fetching gold prices, converting them, and plotting the data. It contains the `main` method, serving as the entry point for the application.
 
 ### 2. `GoldConvertService.java`
-This service class is responsible for converting gold prices to a desired currency. It fetches the exchange rate from a currency exchange service and performs the conversion.
+This service class is responsible for converting gold prices to a desired currency. It receives a list of gold prices, fetches the exchange rate from a `CurrencyExchangeService`, and then performs the conversion. Additionally, it calculates statistics such as the maximum, minimum, and average gold prices.
 
 ### 3. `CurrencyExchangeService.java`
-This service class retrieves the exchange rate for the currency used in converting gold prices. It fetches the exchange rate from an external API.
+This service class retrieves the exchange rate for the currency used in converting gold prices. It fetches the exchange rate from an external API, specifically from the National Bank of Poland (NBP) API. The exchange rate fetched is for the Euro (EUR) currency.
 
 ### 4. `GoldApiService.java`
-This service class fetches gold prices data from an external API based on specified start and end dates.
+This service class fetches gold prices data from an external API, specifically from the National Bank of Poland (NBP) API. It allows fetching gold prices for a specific date range by providing the start and end dates as parameters.
 
 ### 5. `GoldPlotService.java`
-This service class generates a time-series chart of gold prices over time using the JFreeChart library.
+This service class generates a time-series chart of gold prices over time using the JFreeChart library. It receives a list of gold prices and plots them on a chart, which is then saved as an image file (`gold_prices_chart.jpg`).
 
 ### 6. `GoldPrice.java`
-This class represents a single entry of gold price data, including the date and price.
+This class represents a single entry of gold price data. It contains attributes such as the date and price of gold. Objects of this class are used throughout the application to store and manipulate gold price data.
 
 ## Running the Application
 
